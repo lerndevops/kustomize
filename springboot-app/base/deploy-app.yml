@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: myapp
-  name: myapp
+    app: sapp
+  name: spring-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: myapp
+      app: sapp
   template:
     metadata:
       labels:
-        app: myapp
+        app: sapp
     spec:
       containers:
-       - image: lerndevops/springboot-mongo-app:latest
+       - image: lerndevops/samples:springboot-app
          name: cont1
          envFrom: 
           - configMapRef: 
-              name: myapp-config
+              name: spring-app-config

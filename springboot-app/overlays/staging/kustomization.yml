@@ -1,12 +1,12 @@
 bases:
   - ../../base
-namespace: dev
+namespace: stage
 #patches:
 #  - replica_count.yaml
 #  - resource_limits.yml
 #  - devdbconf.yml
 configMapGenerator:
-  - name: myapp-xyz-config
+  - name: spring-app-xyz-config
     files:
      - configs/app.json
 patchesStrategicMerge:
