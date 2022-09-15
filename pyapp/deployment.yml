@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demoapp
+  name: pyapp
   labels:
-    app: myapp
+    app: pyapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: demoapp
+      app: pyapp
   template:
     metadata:
       labels:
-        app: demoapp
+        app: pyapp
     spec:
       containers:
       - name: cont1
-        image: lerndevops/samplepyapp:v1
+        image: docker.io/lerndevops/samples:pyapp-v2
         ports:
         - containerPort: 3000
         envFrom: 
          - configMapRef:
-             name: democonfig
+             name: pyappconfig
